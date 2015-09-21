@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My first ruby page</title>
+	<script src='js/jquery.js' type="text/javascript"></script> 
+
+</head>
+
+<body>
+	<script type="text/javascript">
+		function CallPageSync(url, data) {
+		    var response;
+		    $.ajax({
+		        async: false,
+		        url: url,
+		        type: 'POST',
+		        data: data,
+		        timeout: 4000,
+		        success: function(result) {
+		            response = result;
+		        },
+		        error: function(XMLHttpRequest, textStatus, errorThrown) {
+		            response = "err--" + XMLHttpRequest.status + " -- " + XMLHttpRequest.statusText;
+		        }
+		    });
+		    return response;
+		}
+
+		$(document).ready(function () {
+			/*
+			$("#divtest").html("In Dev Test");  
+			res = CallPageSync("http://localhost:8080/join", "name=Nhung");
+			$("#divtest").html(res.toString());
+			*/
+        });
+
+	</script>
+
+	<h1>This is a static file.</h1>
+	<div id="divtest"></div>
+</body>
+
+</html>

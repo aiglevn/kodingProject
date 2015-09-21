@@ -1,0 +1,5 @@
+$LOAD_PATH << '.'  #load duong dan root
+#require 'sinatra_sequel.rb'
+require 'route_examples.rb'
+
+run MyApp.new
